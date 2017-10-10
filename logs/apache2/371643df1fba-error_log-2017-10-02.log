@@ -1,0 +1,8 @@
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.19.0.3. Set the 'ServerName' directive globally to suppress this message
+Failed loading /usr/lib/php/20151012/ioncube_loader_lin_7.0.so:  /usr/lib/php/20151012/ioncube_loader_lin_7.0.so: cannot open shared object file: No such file or directory
+[Mon Oct 02 19:22:31.441352 2017] [mpm_prefork:notice] [pid 30] AH00163: Apache/2.4.18 (Ubuntu) OpenSSL/1.0.2g configured -- resuming normal operations
+[Mon Oct 02 19:22:31.441394 2017] [core:notice] [pid 30] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.19.0.2. Set the 'ServerName' directive globally to suppress this message
+Failed loading /usr/lib/php/20151012/ioncube_loader_lin_7.0.so:  /usr/lib/php/20151012/ioncube_loader_lin_7.0.so: cannot open shared object file: No such file or directory
+[Mon Oct 02 19:22:47.992296 2017] [mpm_prefork:notice] [pid 30] AH00163: Apache/2.4.18 (Ubuntu) OpenSSL/1.0.2g configured -- resuming normal operations
+[Mon Oct 02 19:22:47.992355 2017] [core:notice] [pid 30] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'

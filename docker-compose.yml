@@ -1,0 +1,35 @@
+version: '2'
+services:
+
+  web:
+    image: 'php:7.2-rc-apache'
+    ports:
+      - 80:80
+    volumes:
+      - ./code:/code
+      - ./config/vhost.conf:/etc/apache2/sites-available/000-default.conf
+      - ./config/php.ini:/usr/local/etc/php/php.ini
+      - ./logs/apache2:/var/log/apache2
+    environment:
+      APACHE_RUN_USER: www-data
+      APACHE_RUN_GROUP: www-data
+      APACHE_PID_FILE: /var/run/apache2.pid
+      APACHE_RUN_DIR: /var/run/apache2
+      APACHE_LOCK_DIR: /var/lock/apache2
+      APACHE_LOG_DIR: /var/log/apache2
+  mysql:
+      image: mysql
+      environment:
+          - MYSQL_ROOT_PASSWORD=mysecretpw
+          - MYSQL_USER=homestead
+          - MYSQL_PASSWORD=secret
+          - MYSQL_DATABASE=homestead
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    links:
+      - mysql
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+    ports:
+      - '8080:80'
