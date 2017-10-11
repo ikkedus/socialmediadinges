@@ -6,7 +6,6 @@
  * Time: 21:34
  */
 
-namespace App\Dao;
 class connect
 {
     private static $pdo = null;
@@ -17,7 +16,8 @@ class connect
     static function getPdo(){
         if(null == self::$pdo){
             try{
-                self::$pdo = new PDO('mysql:host=localhost;dbname='.env('DB_DATABASE').';charset=utf8mb4', env('DB_HOST'), env('DB_PASSWORD')));
+                self::$pdo = new PDO('mysql:host=localhost;dbname='.env('DB_DATABASE').';charset=utf8mb4', env('DB_HOST'), env('DB_PASSWORD'));
+                dd(self::$pdo);
             }
             catch (\Exception $e){
                 throw new \Exception('error database settings niet goed nie moet');

@@ -6,6 +6,8 @@ services:
       .
     ports:
       - 80:80
+    links:
+      - mysql
     volumes:
       - ./code:/code
       - ./config/vhost.conf:/etc/apache2/sites-available/000-default.conf

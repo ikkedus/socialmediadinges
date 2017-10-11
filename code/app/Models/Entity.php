@@ -5,15 +5,18 @@
  * Date: 2-10-17
  * Time: 21:27
  */
-
-namespace App\Dao;
+namespace App\Models;
 
 use Illuminate\Support\Facades\DB;
 
 abstract class Entity
 {
     private $pdo;
-    public $id;
+    public $id = 0;
+    public $createdon;
+    public $updatedon;
+
+
     protected $tableName = "";
 
     function __construct()
@@ -35,8 +38,12 @@ abstract class Entity
     public function save(){
         $class = new \ReflectionClass($this);
         $propsToImplode = [];
+
         foreach ($class->getProperties(\ReflectionProperty::IS_PUBLIC) as $prop){
             $pName = $prop->getName();
+            if($pName === "id"){
+                continue;
+            }
             $propsToImplode[] = '`'.$pName.'` = "'.$this->{$pName}.'"';
         }
         $valuePairs = implode(',',$propsToImplode);
@@ -46,10 +53,15 @@ abstract class Entity
         if($this->id > 0){
             $sql = 'Update '.$this->getTableName().' SET '. $valuePairs.' WHERE id = '.$this->id;
         }
-        if($this->id > 0){
-            $sql = 'insert into '.$this->getTableName().' SET '. $valuePairs.' id = '.$this->id;
+        if($this->id === 0){
+            $sql = 'insert into '.$this->getTableName().' SET '. $valuePairs;
+
         }
         $result = $this->pdo->exec($sql);
+        if($this->id === 0){
+            $this->id = $this->pdo->lastInsertId();
+        }
+        dd($this);
         return $result;
     }
     public function thrash(){
@@ -60,16 +72,21 @@ abstract class Entity
     public static function morph(array $object){
         $class = new \ReflectionClass(get_called_class());
         $entity = $class->newInstance();
-
-        foreach($class->getProperties(\ReflectionProperty::PUBLIC) as $prop) {
+        foreach($class->getProperties(\ReflectionProperty::IS_PUBLIC) as $prop) {
             if (isset($object[$prop->getName()])) {
                 $prop->setValue($entity,$object[$prop->getName()]);
             }
         }
-        $entity->initialize();
+        //$entity->initialize();
         return $entity;
     }
     public static function find ($options = []) {
+        if(($entity = self::findAll($options)) != null){
+            return $entity[0];
+        }
+        return null;
+    }
+    public static function findAll ($options = []) {
 
         $class = new \ReflectionClass(get_called_class());
         $entity = $class->newInstance();
@@ -94,12 +111,61 @@ abstract class Entity
         } else {
             throw new \Exception('Wrong parameter type of options');
         }
-        $raw =  DB::connection()->getPdo()->execute($query);
-        dd($raw);
-
+        $dbo = DB::connection()->getPdo();
+        $sth = $dbo->prepare($query);
+        $sth->execute();
+        $raw = $sth->fetchAll();
         foreach ($raw as $rawRow) {
             $result[] = self::morph($rawRow);
         }
         return $result;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param mixed $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCreatedon()
+    {
+        return $this->createdon;
+    }
+
+    /**
+     * @param mixed $createdon
+     */
+    public function setCreatedon($createdon)
+    {
+        $this->createdon = $createdon;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUpdatedon()
+    {
+        return $this->updatedon;
+    }
+
+    /**
+     * @param mixed $updatedon
+     */
+    public function setUpdatedon($updatedon)
+    {
+        $this->updatedon = $updatedon;
     }
 }
