@@ -17,7 +17,7 @@ class connect
     static function getPdo(){
         if(null == self::$pdo){
             try{
-                self::$pdo = new PDO('mysql:host=localhost;dbname=testdb;charset=utf8mb4', env('DB_HOST', env('DB_PASSWORD')));
+                self::$pdo = new PDO('mysql:host=localhost;dbname='.env('DB_DATABASE').';charset=utf8mb4', env('DB_HOST'), env('DB_PASSWORD')));
             }
             catch (\Exception $e){
                 throw new \Exception('error database settings niet goed nie moet');

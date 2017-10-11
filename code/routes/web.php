@@ -10,13 +10,10 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('page/{page}',"pagecontroller@index");
 
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::group(['prefix'=> 'admin','namespace'=>'Admin'],function (){
-
+Route::get('/hello',function (){
+   return "hello world";
 });
-
