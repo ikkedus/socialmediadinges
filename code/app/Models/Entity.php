@@ -12,10 +12,9 @@ use Illuminate\Support\Facades\DB;
 abstract class Entity
 {
     private $pdo;
-    public $id = 0;
-    public $createdon;
-    public $updatedon;
-
+    protected $id = 0;
+    protected $createdon = null;
+    protected $updatedon = null;
 
     protected $tableName = "";
 
@@ -38,22 +37,29 @@ abstract class Entity
     public function save(){
         $class = new \ReflectionClass($this);
         $propsToImplode = [];
-
-        foreach ($class->getProperties(\ReflectionProperty::IS_PUBLIC) as $prop){
+        if($this->id != 0){
+            $this->updatedon = date("Y-m-d H:i:s");
+        }
+        if($this->createdon === null){
+            $this->createdon = date("Y-m-d H:i:s");
+        }
+        foreach ($class->getProperties(\ReflectionProperty::IS_PROTECTED) as $prop){
             $pName = $prop->getName();
-            if($pName === "id"){
+            if($pName === "id" || $pName == "tableName"){
                 continue;
             }
-            $propsToImplode[] = '`'.$pName.'` = "'.$this->{$pName}.'"';
+            $propsToImplode[] = '`'.$pName.'` =  '.($this->{$pName} ? '"'.$this->{$pName}.'"' : "null");
         }
         $valuePairs = implode(',',$propsToImplode);
 
         $sql = '';
 
         if($this->id > 0){
+
             $sql = 'Update '.$this->getTableName().' SET '. $valuePairs.' WHERE id = '.$this->id;
         }
         if($this->id === 0){
+
             $sql = 'insert into '.$this->getTableName().' SET '. $valuePairs;
 
         }
@@ -61,7 +67,6 @@ abstract class Entity
         if($this->id === 0){
             $this->id = $this->pdo->lastInsertId();
         }
-        dd($this);
         return $result;
     }
     public function thrash(){
@@ -72,8 +77,9 @@ abstract class Entity
     public static function morph(array $object){
         $class = new \ReflectionClass(get_called_class());
         $entity = $class->newInstance();
-        foreach($class->getProperties(\ReflectionProperty::IS_PUBLIC) as $prop) {
+        foreach($class->getProperties(\ReflectionProperty::IS_PROTECTED) as $prop) {
             if (isset($object[$prop->getName()])) {
+                $prop->setAccessible( true );
                 $prop->setValue($entity,$object[$prop->getName()]);
             }
         }
@@ -146,26 +152,10 @@ abstract class Entity
     }
 
     /**
-     * @param mixed $createdon
-     */
-    public function setCreatedon($createdon)
-    {
-        $this->createdon = $createdon;
-    }
-
-    /**
      * @return mixed
      */
     public function getUpdatedon()
     {
         return $this->updatedon;
-    }
-
-    /**
-     * @param mixed $updatedon
-     */
-    public function setUpdatedon($updatedon)
-    {
-        $this->updatedon = $updatedon;
     }
 }

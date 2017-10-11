@@ -1,16 +1,22 @@
 <?php
 namespace App\Models;
 
+use Illuminate\Support\Facades\Hash;
+
 class User extends Entity
 {
-    public $username;
-    public $password;
-    public $admin;
+    protected $username;
+    protected $password;
+    protected $admin;
+    protected $tableName = "users";
 
-    function __construct()
-    {
-        parent::__construct();
-        $this->tableName = "users";
+    public static function validateUser($username,$password){
+        if($user = User::find(["username"=>$username])){
+            if(Hash::check($password,$user->password)){
+                return $user;
+            }
+        }
+        return false;
     }
     /**
      * @return mixed
@@ -41,7 +47,7 @@ class User extends Entity
      */
     public function setPassword($password)
     {
-        $this->password = $password;
+        $this->password = Hash::make($password);
     }
 
     /**
@@ -51,7 +57,9 @@ class User extends Entity
     {
         return $this->admin;
     }
-
+    public function getPosts(){
+        return Post::findAll(["userid"=>$this->id]);
+    }
     /**
      * @param mixed $admin
      */

@@ -20,5 +20,6 @@ Route::get('/hello',function (){
 
 Route::get('/user','UserController@index');
 Route::get('/user/create','UserController@create');
+Route::get('/user/update','UserController@update');
 Route::get('/user/delete','UserController@delete');
 Route::get('/user/validate',"UserController@validateUser");
