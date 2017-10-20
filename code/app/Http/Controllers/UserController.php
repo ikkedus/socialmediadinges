@@ -11,25 +11,32 @@ class UserController extends Controller
     public function index(){
         dd(User::findAll(["username"=>"test"]));
     }
-    public function create(){
+    public function add(){
+        return view("user.add",["id"=>0]);
+    }
+    public function save(Request $request){
+        $validatedData = $request->validate([
+            'password' => 'required|same:password2|min:8',
+            'username' => 'required|email|min:8'
+        ]);
         $user = new User();
-        $user->setUsername("test");
-        $user->setPassword("hallo");
+        $user->setUsername($request->username);
+        $user->setPassword($request->password);
         $user->setAdmin(true);
         $user->save();
 
-        $post = new Post();
-        $post->setPost("hello this is post");
-        $post->setUserId(User::find(["username"=>'test'])->getId());
-        $post->save();
-        dd(User::find(["username"=> 'test'])->getPosts());
     }
-    public function update(){
-        $user = User::find(["username"=>"test"]);
-        $posts = $user->getPosts();
-        $post = $posts[0];
-        $post->setPost("this is mod");
-        $post->save();
+    public function edit($id){
+        return view("user.add",["id"=>$id]);
+
+    }
+    public function update(Request $request){
+        $validatedData = $request->validate([
+            'password' => 'required|same:password2|min:8',
+        ]);
+        $user = User::find(['id'=>$request->id]);
+        $user->setPassword($request->password);
+        $user->save();
     }
     public function delete(){
         $user = User::find(["username"=>"test"]);

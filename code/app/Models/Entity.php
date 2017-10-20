@@ -48,6 +48,7 @@ abstract class Entity
             if($pName === "id" || $pName == "tableName"){
                 continue;
             }
+            //todo: dit faalt als waarde false is. maak functie die dit goed doet. Controlle op TYPE?
             $propsToImplode[] = '`'.$pName.'` =  '.($this->{$pName} ? '"'.$this->{$pName}.'"' : "null");
         }
         $valuePairs = implode(',',$propsToImplode);
@@ -68,6 +69,19 @@ abstract class Entity
             $this->id = $this->pdo->lastInsertId();
         }
         return $result;
+    }
+    public function format($pName){
+        $return = '`'.$pName.'` =  ';
+        $type = gettype($this->{$pName});
+        switch ($type){
+            case $type === "boolean":
+                $return .= '"'.$this->{$pName}.'"';
+            break;
+            default:
+                $return .= ($this->{$pName} ? '"'.$this->{$pName}.'"' : "null";
+                break;
+        }
+        return $return;
     }
     public function thrash(){
         $sql = 'DELETE from '.$this->getTableName().' WHERE id = '.$this->id;

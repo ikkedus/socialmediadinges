@@ -33,15 +33,6 @@ class User extends Entity
     {
         $this->username = $username;
     }
-
-    /**
-     * @return mixed
-     */
-    public function getPassword()
-    {
-        return $this->password;
-    }
-
     /**
      * @param mixed $password
      */
