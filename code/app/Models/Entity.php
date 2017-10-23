@@ -15,14 +15,13 @@ abstract class Entity
     protected $id = 0;
     protected $createdon = null;
     protected $updatedon = null;
-
     protected $tableName = "";
 
     function __construct()
     {
+        //todo:dit vervangen naar de regulieren versie van pdo
         $this->pdo = DB::connection()->getPdo();
     }
-
     private function getTableName(){
         $class = new \ReflectionClass($this);
         $tableName = '';
@@ -33,7 +32,6 @@ abstract class Entity
         }
         return $tableName;
     }
-
     public function save(){
         $class = new \ReflectionClass($this);
         $propsToImplode = [];
@@ -48,8 +46,7 @@ abstract class Entity
             if($pName === "id" || $pName == "tableName"){
                 continue;
             }
-            //todo: dit faalt als waarde false is. maak functie die dit goed doet. Controlle op TYPE?
-            $propsToImplode[] = '`'.$pName.'` =  '.($this->{$pName} ? '"'.$this->{$pName}.'"' : "null");
+            $propsToImplode[] = $this->format($pName);
         }
         $valuePairs = implode(',',$propsToImplode);
 
@@ -75,10 +72,13 @@ abstract class Entity
         $type = gettype($this->{$pName});
         switch ($type){
             case $type === "boolean":
-                $return .= '"'.$this->{$pName}.'"';
+                $return .= ($this->{$pName} ? "true" : "false");
             break;
+            case $type === "integer":
+                $return .= "".($this->{$pName});
+                break;
             default:
-                $return .= ($this->{$pName} ? '"'.$this->{$pName}.'"' : "null";
+                $return .= ($this->{$pName} ? '"'.$this->{$pName}.'"' : "null");
                 break;
         }
         return $return;
@@ -107,7 +107,6 @@ abstract class Entity
         return null;
     }
     public static function findAll ($options = []) {
-
         $class = new \ReflectionClass(get_called_class());
         $entity = $class->newInstance();
         $tableName = '';
@@ -120,7 +119,7 @@ abstract class Entity
         $query = 'select * from '.$tableName." ";
         $whereConditions = [];
 
-        if (is_array($options)) {
+        if (is_array($options) && $options != []) {
             foreach ($options as $key => $value) {
                 $whereConditions[] = '`'.$key.'` = "'.$value.'"';
             }
@@ -129,7 +128,6 @@ abstract class Entity
         } elseif (is_string($options)) {
             $query .= 'WHERE '.$options;
         } else {
-            throw new \Exception('Wrong parameter type of options');
         }
         $dbo = DB::connection()->getPdo();
         $sth = $dbo->prepare($query);
@@ -141,20 +139,22 @@ abstract class Entity
         return $result;
     }
 
+    protected function getIds($obj){
+        if(is_array($obj)){
+            $ids = array_map(function($value){
+                return $value->getId();
+            },$obj);
+        }else{
+            $ids = $obj.getId();
+        }
+        return $ids;
+    }
     /**
      * @return mixed
      */
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * @param mixed $id
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
     }
 
     /**

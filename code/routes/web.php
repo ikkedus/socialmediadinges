@@ -18,10 +18,14 @@ Route::get('/hello',function (){
     phpinfo();
 });
 
+Route::get('/project','ProjectController@index');
+
+
+
 Route::get('/user','UserController@index');
 Route::get('/user/add',"UserController@add");
 Route::post('/user/save',"UserController@save");
-Route::get('/user/edit{id}',"UserController@edit");
+Route::get('/user/edit/{id}',"UserController@edit");
 Route::post('/user/update',"UserController@update");
 Route::get('/user/delete','UserController@delete');
 Route::get('/user/validate',"UserController@validateUser");

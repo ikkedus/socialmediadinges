@@ -9,10 +9,10 @@
     </div>
 @endif
 {{Form::hidden("id",$id)}}
-{{Form::label("username","email")}}
-{{Form::text("username")}}
+{{Form::label("oldpassword","oude wachtwoord")}}
+{{Form::password("oldpassword")}}
 
-{{Form::label("password","wachtwoord")}}
+{{Form::label("password","nieuwe wachtwoord")}}
 {{Form::password("password")}}
 
 {{Form::label("password2","controle wachtwoord")}}

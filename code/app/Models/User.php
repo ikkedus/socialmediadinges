@@ -40,7 +40,9 @@ class User extends Entity
     {
         $this->password = Hash::make($password);
     }
-
+    public function getPassword(){
+        return $this->password;
+    }
     /**
      * @return mixed
      */

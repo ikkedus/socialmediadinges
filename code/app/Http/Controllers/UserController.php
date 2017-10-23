@@ -3,13 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\Project;
 use App\Models\User;
+use App\Rules\OldPassword;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class UserController extends Controller
 {
     public function index(){
-        dd(User::findAll(["username"=>"test"]));
+        $project = new Project();
+        $project->getMembers();
+        dd(User::findAll());
     }
     public function add(){
         return view("user.add",["id"=>0]);
@@ -22,17 +27,16 @@ class UserController extends Controller
         $user = new User();
         $user->setUsername($request->username);
         $user->setPassword($request->password);
-        $user->setAdmin(true);
+        $user->setAdmin(false);
         $user->save();
-
     }
     public function edit($id){
-        return view("user.add",["id"=>$id]);
-
+        return view("user.edit",["id"=>$id]);
     }
     public function update(Request $request){
         $validatedData = $request->validate([
-            'password' => 'required|same:password2|min:8',
+            'password' => 'required|same:password2|min:8|not_in:'.$request->oldpassword,
+            'oldpassword' => [new OldPassword]
         ]);
         $user = User::find(['id'=>$request->id]);
         $user->setPassword($request->password);
@@ -44,10 +48,13 @@ class UserController extends Controller
     }
     public function validateUser(){
         $user = new User();
-        $user = User::validateUser("test","hello");
+        $user = User::validateUser("cbm@live.nl","marco2510");
         if($user){
-            dd($user);
+            session_start();
+            $_SESSION["userid"] = $user->getId();
+            return "login succes";
         }
+        return "login failed";
     }
 
 }
