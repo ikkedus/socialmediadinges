@@ -12,8 +12,6 @@ use Illuminate\Support\Facades\Session;
 class UserController extends Controller
 {
     public function index(){
-        $project = new Project();
-        $project->getMembers();
         dd(User::findAll());
     }
     public function add(){
@@ -24,11 +22,15 @@ class UserController extends Controller
             'password' => 'required|same:password2|min:8',
             'username' => 'required|email|min:8'
         ]);
-        $user = new User();
-        $user->setUsername($request->username);
-        $user->setPassword($request->password);
-        $user->setAdmin(false);
-        $user->save();
+        if(User::find(["username"=>$request->username]) === null){
+            $user = new User();
+            $user->setUsername($request->username);
+            $user->setPassword($request->password);
+            $user->setAdmin(false);
+            $user->save();
+            return "gebruiker toegevoegd";
+        }
+        return "gebruiker bestaat al";
     }
     public function edit($id){
         return view("user.edit",["id"=>$id]);
