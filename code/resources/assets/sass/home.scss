@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700,900');
+body{
+  font-family: "Lato",sans-serif;
+}
+.navbar-brand img{
+  max-width: 100%;
+  max-height: 45px;
+}
+
+.banner{
+  background-image: url("/images/circute.svg");
+  background-size: 60%;
+  background-position: right top;
+  background-repeat: no-repeat;
+  background-color: deepskyblue;
+  height: 95vh;
+  position: relative;
+  & .message{
+    position: absolute;
+    top:30%;
+    left: 20%;
+    max-width: 500px;
+    & > * {
+      color:white;
+      font-weight: 900;
+      font-family: "Lato",sans-serif;
+    }
+  }
+}
+.container,.container-fluid{
+  & h1 {
+    text-align: center;
+  }
+  & .underline{
+    height: 8px;
+    width: 100px;
+    background-color: deepskyblue;
+    margin: 0 auto;
+  }
+  & p{
+        margin-top: 10px;
+        text-align: center;
+      }
+}
+.exhibit{
+  margin: 0 auto;
+  width: 100%;
+  display: table;
+  & a{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    background-color: rgba(0,191,255,0.6);
+    opacity: 0;
+    left: 320px;
+    &:hover{
+      text-decoration: none;
+    }
+  }
+  &__image{
+    max-width: 100%;
+  }
+  &__frame{
+    margin: 0;
+    position: relative;
+    display: inline-block;
+    width: calc(100%/6);
+    &:hover > a{
+      opacity: 1;
+      animation: slide 0.3s forwards;
+      transition: 0.2s;
+    }
+  }
+}
+@-webkit-keyframes slide {
+  100% { left: 0; }
+}
+
+@keyframes slide {
+  100% { left: 0; }
+}
