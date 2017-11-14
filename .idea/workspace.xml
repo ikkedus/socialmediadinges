@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e0e73631-919d-4154-8efd-f236dc455110" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/code/public/images/circute.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/code/public/images/inholland.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/code/resources/assets/sass/home.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/bootstrap/app.php" afterPath="$PROJECT_DIR$/code/bootstrap/app.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/public/css/app.css" afterPath="$PROJECT_DIR$/code/public/css/app.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/public/js/app.js" afterPath="$PROJECT_DIR$/code/public/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/resources/assets/sass/app.scss" afterPath="$PROJECT_DIR$/code/resources/assets/sass/app.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/resources/views/home/home.blade.php" afterPath="$PROJECT_DIR$/code/resources/views/home/home.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logs/apache2/access.log" afterPath="$PROJECT_DIR$/logs/apache2/access.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logs/apache2/error.log" afterPath="$PROJECT_DIR$/logs/apache2/error.log" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -270,6 +260,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path" value="/usr/bin/node" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -325,12 +316,20 @@
       <workItem from="1508532609077" duration="6309000" />
       <workItem from="1508782205011" duration="9583000" />
       <workItem from="1510691287897" duration="766000" />
-      <workItem from="1510697462704" duration="5841000" />
+      <workItem from="1510697462704" duration="5915000" />
     </task>
+    <task id="LOCAL-00001" summary="css is een bitch">
+      <created>1510703360680</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1510703360681</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62586000" />
+    <option name="totallyTimeSpent" value="62660000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="3000" y="473" width="1920" height="1080" extended-state="6" />
@@ -379,6 +378,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="css is een bitch" />
+    <option name="LAST_COMMIT_MESSAGE" value="css is een bitch" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
