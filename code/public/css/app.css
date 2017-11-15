@@ -20,7 +20,7 @@
 .banner .message {
   position: absolute;
   top: 30%;
-  left: 20%;
+  left: 13%;
   max-width: 500px;
 }
 
@@ -28,6 +28,22 @@
   color: white;
   font-weight: 900;
   font-family: "Lato",sans-serif;
+}
+
+.image__wrapper {
+  background-position: center;
+  background-size: cover;
+  border-bottom: 8px solid deepskyblue;
+  margin-bottom: 10px;
+}
+
+.image__wrapper > img {
+  opacity: 0;
+}
+
+.container:not(:first-child),
+.container-fluid:not(:first-child) {
+  margin-bottom: 20px;
 }
 
 .container h1,
@@ -52,7 +68,6 @@
 .exhibit {
   margin: 0 auto;
   width: 100%;
-  display: table;
 }
 
 .exhibit a {
@@ -90,6 +105,8 @@
   position: relative;
   display: inline-block;
   width: calc(100%/6);
+  overflow: hidden;
+  padding: 0;
 }
 
 .exhibit__frame:hover > a {
@@ -98,6 +115,100 @@
           animation: slide 0.3s forwards;
   -webkit-transition: 0.2s;
   transition: 0.2s;
+}
+
+.events {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.event__frame {
+  max-width: 650px;
+}
+
+.event__date {
+  text-align: center;
+  border-right: 1px solid black;
+}
+
+.event__date hr {
+  border-top: 1px solid black;
+}
+
+.event__text h4 {
+  color: dimgray;
+}
+
+.event__text a {
+  color: black;
+}
+
+.event__text a i {
+  color: deepskyblue;
+}
+
+.usp {
+  margin: 30px 20px;
+  margin-bottom: 0;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.usp i {
+  font-size: 10em;
+}
+
+.usp .fa-university {
+  margin-left: 12px;
+}
+
+.usps {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: deepskyblue;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  color: white;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-bottom: 0 !important;
+}
+
+.usps h4 {
+  margin-bottom: 20px;
+}
+
+.map {
+  padding: 0;
+}
+
+.filters {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.filter__btn {
+  background: none;
+  border: none;
 }
 
 @-webkit-keyframes slide {
