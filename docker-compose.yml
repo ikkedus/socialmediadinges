@@ -6,8 +6,6 @@ services:
       .
     ports:
       - 80:80
-    links:
-      - mysql
     volumes:
       - ./code:/code
       - ./config/vhost.conf:/etc/apache2/sites-available/000-default.conf
@@ -20,19 +18,3 @@ services:
       APACHE_RUN_DIR: /var/run/apache2
       APACHE_LOCK_DIR: /var/lock/apache2
       APACHE_LOG_DIR: /var/log/apache2
-  mysql:
-      image: mysql
-      environment:
-          - MYSQL_ROOT_PASSWORD=mysecretpw
-          - MYSQL_USER=homestead
-          - MYSQL_PASSWORD=secret
-          - MYSQL_DATABASE=homestead
-  phpmyadmin:
-    image: phpmyadmin/phpmyadmin
-    links:
-      - mysql
-    environment:
-      PMA_HOST: mysql
-      PMA_PORT: 3306
-    ports:
-      - '8080:80'

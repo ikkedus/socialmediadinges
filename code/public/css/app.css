@@ -15,6 +15,7 @@
   background-color: deepskyblue;
   height: 95vh;
   position: relative;
+  margin-bottom: 0px !important;
 }
 
 .banner .message {
@@ -68,6 +69,12 @@
 .exhibit {
   margin: 0 auto;
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .exhibit a {
@@ -124,6 +131,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin: 0 auto;
 }
 
 .event__frame {
@@ -132,7 +140,6 @@
 
 .event__date {
   text-align: center;
-  border-right: 1px solid black;
 }
 
 .event__date hr {
@@ -195,6 +202,54 @@
 
 .map {
   padding: 0;
+}
+
+.footer {
+  background: deepskyblue;
+  margin-bottom: 0 !important;
+}
+
+.footer .sitemap__list {
+  list-style: none;
+  margin-bottom: 0;
+}
+
+.footer .createdby {
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+.footer .createdby b {
+  font-size: 12pt;
+}
+
+.footer a,
+.footer b {
+  font-size: 14pt;
+  color: white;
+}
+
+.md-effect-15.modal {
+  -webkit-perspective: 1300px;
+  perspective: 1300px;
+}
+
+.md-effect-15 .modal-content {
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform: translateZ(100px) translateX(-30%) rotateY(90deg);
+  transform: translateZ(100px) translateX(-30%) rotateY(90deg);
+  -webkit-transform-origin: 0 100%;
+  transform-origin: 0 100%;
+  opacity: 0;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.show.md-effect-15 .modal-content {
+  -webkit-transform: translateZ(0px) translateX(0%) rotateY(0deg);
+  transform: translateZ(0px) translateX(0%) rotateY(0deg);
+  opacity: 1;
 }
 
 .filters {

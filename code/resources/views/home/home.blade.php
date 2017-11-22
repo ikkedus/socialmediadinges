@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/app.css">
 </head>
 <body>
+@include('home.modal')
 <section id="banner" class="banner container-fluid">
     <div class="message">
         <h1>
@@ -22,22 +23,7 @@
         <a href="#secondcontainer"><i class="fa fa-4x fa-arrow-circle-o-down"></i></a>
     </div>
 </section>
-<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
-    <a class="navbar-brand" href="#"><img src="/images/inholland.svg"></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="#banner">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-            </li>
-        </ul>
-    </div>
-</nav>
+@include('menu')
 <div id="showcase" class="showcase container-fluid">
     <h1>
         Projecten van onze Studenten
@@ -54,40 +40,28 @@
     <div class="exhibit row">
         @for($i = 0; $i < 12; $i++)
               <div class="exhibit__frame col-4 col-sm-3 col-md-2 {{$i % 2 ==0 ? ($i % 3 == 0 ? "cat2": "cat3" ):"cat1"}}">
-                  <a href="http://www.google.nl"><i class="fa fa-2x fa-search"></i></a>
+                  <a href="/project/{{$i}}" data-id="{{$i}}"><i class="fa fa-2x fa-search"></i></a>
                   <img class="exhibit__image" src="https://pbs.twimg.com/profile_images/848471660860538880/pevXVsIp.jpg">
               </div>
         @endfor
     </div>
 </div>
-<div id="events" class="events  container-fluid">
-        @for($i = 0; $i < 2; $i++)
-            <div class="event__frame col-md-6 col-lg-6">
-                <div class="image__wrapper event__image" style="background-image: url('https://static.pexels.com/photos/126407/pexels-photo-126407.jpeg');">
-                    <img width="100%" height="100%" src="https://static.pexels.com/photos/126407/pexels-photo-126407.jpeg">
-                </div>
-                <div class="row">
-                    <div class="event__date col-sm-2">
-                        <h3>
-                            Apr
-                        </h3>
-                        <h4>
-                            22
-                        </h4>
-                        <hr>
-                        <h3>
-                            <i class="fa fa-heart"></i>
-                        </h3>
-                    </div>
-                    <div class="event__text col-sm-10">
-                        <h3>Title</h3>
-                        <h4>Created By Jane Doe</h4>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris pretium libero sit amet tempus pretium. Suspendisse rutrum purus in ipsum dignissim, sit amet mollis sem vestibulum. Sed feugiat tellus at odio efficitur gravida. Sed nec tincidunt tellus, ac dapibus velit. Duis tincidunt leo libero, at ullamcorper arcu blandit ut. Nulla id eros malesuada, mollis purus sed, feugiat nibh. Nam aliquam eget lorem et faucibus.
-                        <br><a style="clear:both; float:left;" href="#"><i class="fa fa-arrow-right"></i> Lees meer</a>
-                    </div>
-                </div>
-            </div>
-        @endfor
+<div id="events" class="events row container-fluid">
+       @php
+            $object = (object) [
+                    'date' => new \DateTime(),
+                    'img' => "https://static.pexels.com/photos/126407/pexels-photo-126407.jpeg",
+                    'title' => "this is title",
+                    'description' =>'This is text',
+                    'id' =>1,
+                    'creator'=>"Martin van der Gragt",
+                ];
+                $events = [$object,$object];
+
+        @endphp
+        @foreach($events as $event)
+                @include('home.event', ['event' => $event])
+            @endforeach
 </div>
 <div id="usps" class="usps container-fluid">
     <div class="row">
@@ -132,7 +106,7 @@
             <img width="100%" src="https://www.smashingmagazine.com/wp-content/uploads/2015/06/10-dithering-opt.jpg">
         </div>
         <div class="col-md-8">
-
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris pretium libero sit amet tempus pretium. Suspendisse rutrum purus in ipsum dignissim, sit amet mollis sem vestibulum. Sed feugiat tellus at odio efficitur gravida. Sed nec tincidunt tellus, ac dapibus velit. Duis tincidunt leo libero, at ullamcorper arcu blandit ut. Nulla id eros malesuada, mollis purus sed, feugiat nibh. Nam aliquam eget lorem et faucibus.
         </div>
     </div>
 </div>
@@ -141,6 +115,46 @@
         <div class="offset-md-2 col-md-8">
 
         </div>
+    </div>
+</div>
+<div id="footer" class="footer container-fluid">
+    <div class="sitemap container">
+       <div class="row">
+            <div class="col-md-12">
+                <b>Sitemap</b>
+            </div>
+           <ul class="col-md-3 sitemap__list">
+               <li>
+                   <a href="#">Link </a>
+               </li>
+               <li>
+                   <a href="#">Link </a>
+               </li>
+               <li>
+                   <a href="#">Link </a>
+               </li>
+               <li>
+                   <a href="#">Link </a>
+               </li>
+           </ul>
+           <ul class="col-md-3 sitemap__list">
+               <li>
+                   <a href="#">Link </a>
+               </li>
+               <li>
+                   <a href="#">Link </a>
+               </li>
+               <li>
+                   <a href="#">Link </a>
+               </li>
+               <li>
+                   <a href="#">Link </a>
+               </li>
+           </ul>
+           <div class="createdby col-md-12">
+              <b> Created by Martin van der Gragt</b>
+           </div>
+       </div>
     </div>
 </div>
 <script
@@ -170,6 +184,16 @@
         });
         $('.exhibit__frame:not(.'+filter+')').each(function () {
             $(this).hide();
+        });
+    });
+    $('.exhibit__frame a').on('click',function (e) {
+        e.preventDefault();
+        let id = $(this).attr('data-id');
+        $.ajax("/project/modal/"+id,{
+            success:function (result) {
+                $('.modal-content').html(result);
+                $('#myModal').modal();
+            }
         });
     });
 </script>

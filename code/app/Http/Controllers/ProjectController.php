@@ -9,18 +9,10 @@ use Illuminate\Http\Request;
 class ProjectController extends Controller
 {
     public function index(){
-        $cb = new ContentBlock();
-        $html ="<!DOCTYPE html>
-                <html>
-                <body>
-                
-                <h1>My First Heading</h1>
-                
-                <p>My first paragraph.</p>
-                
-                </body>
-                </html>";
-        $cb->setContent($html);
-        return $cb->getContent();
+        return view('project.project');
     }
+    public function modal($id){
+        return view('project.modal');
+    }
+
 }

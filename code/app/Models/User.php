@@ -3,12 +3,12 @@ namespace App\Models;
 
 use Illuminate\Support\Facades\Hash;
 
-class User extends Entity
+class User extends Person
 {
+    protected $tableName = "users";
     protected $username;
     protected $password;
     protected $admin;
-    protected $tableName = "users";
 
     public static function validateUser($username,$password){
         if($user = User::find(["username"=>$username])){
@@ -51,7 +51,7 @@ class User extends Entity
         return $this->admin;
     }
     public function getPosts(){
-        return Post::findAll(["userid"=>$this->id]);
+        return Post::findAll("1=1 ORDER BY date limit 3");
     }
     /**
      * @param mixed $admin

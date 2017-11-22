@@ -19,6 +19,7 @@ Route::get('/hello',function (){
 });
 
 Route::get('/project','ProjectController@index');
+Route::get('/project/modal/{id}','ProjectController@modal');
 
 
 
