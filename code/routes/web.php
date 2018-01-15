@@ -21,6 +21,14 @@ Route::get('/hello',function (){
 Route::get('/project','ProjectController@index');
 Route::get('/project/modal/{id}','ProjectController@modal');
 
+Route::get('/admin',function (){
+    return view('admin.template',["title" => "Dashboard"]);
+});
+
+
+
+Route::get('/admin/login',"UserController@login");
+Route::post('/admin/validate',"UserController@validateUser");
 
 
 Route::get('/user','UserController@index');

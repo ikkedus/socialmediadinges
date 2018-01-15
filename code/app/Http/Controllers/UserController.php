@@ -20,12 +20,16 @@ class UserController extends Controller
     public function save(Request $request){
         $validatedData = $request->validate([
             'password' => 'required|same:password2|min:8',
-            'username' => 'required|email|min:8'
+            'email' => 'required|email|min:8'
         ]);
         if(User::find(["username"=>$request->username]) === null){
             $user = new User();
             $user->setUsername($request->username);
+            $user->setEmail($request->email);
             $user->setPassword($request->password);
+            $user->setFirstname($request->firstname);
+            $user->setLastname($request->lastname);
+            $user->setPrefix($request->prefix);
             $user->setAdmin(false);
             $user->save();
             return "gebruiker toegevoegd";
@@ -34,6 +38,9 @@ class UserController extends Controller
     }
     public function edit($id){
         return view("user.edit",["id"=>$id]);
+    }
+    public function login(){
+        return view('admin.login',['status'=>false]);
     }
     public function update(Request $request){
         $validatedData = $request->validate([
@@ -48,15 +55,14 @@ class UserController extends Controller
         $user = User::find(["username"=>"test"]);
         $user->thrash();
     }
-    public function validateUser(){
-        $user = new User();
-        $user = User::validateUser("cbm@live.nl","marco2510");
+    public function validateUser(Request $request){
+        $user = User::validateUser($request->username,$request->password);
         if($user){
             session_start();
             $_SESSION["userid"] = $user->getId();
-            return "login succes";
+            return redirect("/admin");
         }
-        return "login failed";
+        return redirect("/admin/login");
     }
 
 }

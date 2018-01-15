@@ -18,3 +18,15 @@ services:
       APACHE_RUN_DIR: /var/run/apache2
       APACHE_LOCK_DIR: /var/lock/apache2
       APACHE_LOG_DIR: /var/log/apache2
+    links:
+        - "db:database"
+  db:
+    image: mariadb:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: 'test_pass' # TODO: Change this
+      MYSQL_USER: 'test'
+      MYSQL_PASS: 'pass'
+    volumes:
+      - ./data:/var/lib/mysql
+    ports:
+      - 3306:3306

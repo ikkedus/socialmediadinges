@@ -81,6 +81,11 @@ abstract class Person extends Entity
 
 
     public function getFullName(){
-        return $this->firstname. " ".$this->prefix ? $this->prefix." " :"" .$this->lastname;
+        return $this->firstname. " ".($this->prefix ? $this->prefix." " :"").$this->lastname;
     }
+    public function getCaptilizedFullName()
+    {
+        return ucfirst($this->firstname). " ".($this->prefix ? $this->prefix." " :"").ucfirst($this->lastname);
+    }
+
 }

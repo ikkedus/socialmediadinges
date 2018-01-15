@@ -33,6 +33,7 @@
         hier onder projecten van studenten van Informatica Inholland
     </p>
     <div class="filters row">
+        <button class="filter__btn" data-action="reset"><i class="fa fa-2x fa-undo"></i></button>
         <button class="filter__btn" data-action="cat1"><i class="fa fa-2x fa-gamepad"></i></button>
         <button class="filter__btn" data-action="cat2"><i class="fa fa-2x fa-handshake-o"></i></button>
         <button class="filter__btn" data-action="cat3"><i class="fa fa-2x fa-pinterest"></i></button>
@@ -41,7 +42,7 @@
         @for($i = 0; $i < 12; $i++)
               <div class="exhibit__frame col-4 col-sm-3 col-md-2 {{$i % 2 ==0 ? ($i % 3 == 0 ? "cat2": "cat3" ):"cat1"}}">
                   <a href="/project/{{$i}}" data-id="{{$i}}"><i class="fa fa-2x fa-search"></i></a>
-                  <img class="exhibit__image" src="https://pbs.twimg.com/profile_images/848471660860538880/pevXVsIp.jpg">
+                  <img class="exhibit__image" src="http://thecatapi.com/api/images/get?format=src&type=jpg">
               </div>
         @endfor
     </div>
@@ -182,9 +183,12 @@
         $('.exhibit__frame').each(function(){
             $(this).show();
         });
-        $('.exhibit__frame:not(.'+filter+')').each(function () {
-            $(this).hide();
-        });
+        if(filter !== "reset")
+        {
+            $('.exhibit__frame:not(.'+filter+')').each(function () {
+                $(this).hide();
+            });
+        }
     });
     $('.exhibit__frame a').on('click',function (e) {
         e.preventDefault();

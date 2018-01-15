@@ -1,4 +1,4 @@
-{{Form::open(array('url' => '/user/save')) }}
+{{Form::open(array('url' => '/user/save','style'=>"display: inline-grid;")) }}
 @if ($errors->any())
     <div class="alert alert-danger">
         <ul>
@@ -9,9 +9,16 @@
     </div>
 @endif
     {{Form::hidden("id",$id)}}
-    {{Form::label("username","email")}}
+    {{Form::label("username","Gebruikersnaam")}}
     {{Form::text("username")}}
-
+    {{Form::label("firstname","voornaam")}}
+    {{Form::text("firstname")}}
+    {{Form::label("lastname","achternaam")}}
+    {{Form::text("lastname")}}
+    {{Form::label("prefix","tussenvoegsel")}}
+    {{Form::text("prefix")}}
+    {{Form::label("email","email")}}
+    {{Form::text("email")}}
     {{Form::label("password","wachtwoord")}}
     {{Form::password("password")}}
 
