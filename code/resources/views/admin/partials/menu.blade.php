@@ -1,15 +1,22 @@
 <ul class="sidebar-menu" data-widget="tree">
-    <li class="treeview">
-        <a href="#">
+    <li class="">
+        <a href="/admin">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
             <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
+
             </span>
         </a>
-        <ul class="treeview-menu">
-            <li class="active"><a href="#"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
-        </ul>
     </li>
+    @if(\App\Helpers\CurrentUser::IsAdmin())
+        <li class="">
+            <a href="/users">
+                <i class="fa fa-user-circle-o"></i> <span>Users</span>
+                <span class="pull-right-container">
+
+            </span>
+            </a>
+        </li>
+    @endif
     <li>
         <a href="pages/mailbox/mailbox.html">
             <i class="fa fa-envelope"></i> <span>Berichten</span>

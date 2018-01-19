@@ -9,6 +9,7 @@ class User extends Person
     protected $username;
     protected $password;
     protected $admin;
+    protected $locked;
 
     public static function validateUser($username,$password){
         if($user = User::find(["username"=>$username])){
@@ -59,6 +60,22 @@ class User extends Person
     public function setAdmin($admin)
     {
         $this->admin = $admin;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLocked()
+    {
+        return $this->locked;
+    }
+
+    /**
+     * @param mixed $locked
+     */
+    public function setLocked($locked)
+    {
+        $this->locked = $locked;
     }
 
 }

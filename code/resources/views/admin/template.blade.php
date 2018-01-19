@@ -3,12 +3,12 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Project Social Media | {{$title}}</title>
+    <title>Project Social Media | {{(isset($title) ? $title:$title="")}}</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.7 -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <link rel="stylesheet" type="text/css" href="/assets/content-tools.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/AdminLTE.css">
 
@@ -75,12 +75,12 @@
             </h1>
             <ol class="breadcrumb">
                 @if($title !== "Dashboard")
-                    <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+                    <li><a href="/admin"><i class="fa fa-dashboard"></i> Dashboard </a></li>
                     @endif
                 <li class="active">{{$title}}</li>
             </ol>
         </section>
-
+        @yield('content')
         <!-- Main content -->
 
     </div>
@@ -132,5 +132,6 @@
 <!-- Bootstrap 3.3.7 -->
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script src="/js/adminlte.js"></script>
+@yield("scripts")
 </body>
 </html>

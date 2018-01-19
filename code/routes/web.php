@@ -21,20 +21,28 @@ Route::get('/hello',function (){
 Route::get('/project','ProjectController@index');
 Route::get('/project/modal/{id}','ProjectController@modal');
 
-Route::get('/admin',function (){
-    return view('admin.template',["title" => "Dashboard"]);
-});
+Route::get('/admin',"AdminController@index");
 
 
 
 Route::get('/admin/login',"UserController@login");
 Route::post('/admin/validate',"UserController@validateUser");
 
+Route::get('/admin/pages',"PageController@index");
+
+Route::post('/image/upload',"ImageController@upload");
+Route::post('/image/clear',"ImageController@clear");
+Route::post('/image/rotate',"ImageController@rotate");
+Route::post('/image/crop',"ImageController@crop");
+
+
 
 Route::get('/user','UserController@index');
-Route::get('/user/add',"UserController@add");
+Route::get('/users',"UserController@add");
 Route::post('/user/save',"UserController@save");
 Route::get('/user/edit/{id}',"UserController@edit");
 Route::post('/user/update',"UserController@update");
-Route::get('/user/delete','UserController@delete');
+Route::get('/user/delete/{id}','UserController@delete');
 Route::get('/user/validate',"UserController@validateUser");
+Route::get('/user/lock/{id}',"UserController@lock");
+Route::get('/user/logout',"UserController@logout");

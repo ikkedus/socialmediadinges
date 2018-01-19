@@ -10,7 +10,6 @@ namespace App\Helpers;
 
 
 use App\Models\User;
-use Illuminate\Support\Facades\Session;
 
 class CurrentUser
 {
@@ -22,4 +21,25 @@ class CurrentUser
         }
         return User::find(["id"=> $_SESSION["userid"]]);
     }
+    public static function IsAuthenticated()
+    {
+        if(!isset($_SESSION))
+        {
+            session_start();
+        }
+        return isset($_SESSION["userid"]);
+    }
+    public static function IsAdmin()
+    {
+        if(!isset($_SESSION))
+        {
+            session_start();
+        }
+        if(!self::IsAuthenticated())
+        {
+            return false;
+        }
+        return User::find(["id"=> $_SESSION["userid"]])->getAdmin();
+    }
+
 }

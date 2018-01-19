@@ -144,3 +144,147 @@ AH00558: apache2: Could not reliably determine the server's fully qualified doma
 AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.19.0.3. Set the 'ServerName' directive globally to suppress this message
 [Mon Jan 15 21:19:44.829388 2018] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.25 (Debian) PHP/7.2.0RC3 configured -- resuming normal operations
 [Mon Jan 15 21:19:44.829464 2018] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.19.0.3. Set the 'ServerName' directive globally to suppress this message
+[Wed Jan 17 18:58:38.980156 2018] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.25 (Debian) PHP/7.2.0RC3 configured -- resuming normal operations
+[Wed Jan 17 18:58:38.980444 2018] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+[Thu Jan 18 20:00:03.947227 2018] [mpm_prefork:notice] [pid 1] AH00169: caught SIGTERM, shutting down
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.19.0.3. Set the 'ServerName' directive globally to suppress this message
+[Thu Jan 18 20:22:44.123523 2018] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.25 (Debian) PHP/7.2.0RC3 configured -- resuming normal operations
+[Thu Jan 18 20:22:44.123575 2018] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+[Thu Jan 18 21:54:23.967390 2018] [mpm_prefork:notice] [pid 1] AH00169: caught SIGTERM, shutting down
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.19.0.3. Set the 'ServerName' directive globally to suppress this message
+[Thu Jan 18 21:54:25.472942 2018] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.25 (Debian) PHP/7.2.0RC3 configured -- resuming normal operations
+[Thu Jan 18 21:54:25.473004 2018] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+[Thu Jan 18 21:57:11.075491 2018] [mpm_prefork:notice] [pid 1] AH00169: caught SIGTERM, shutting down
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.19.0.3. Set the 'ServerName' directive globally to suppress this message
+[Thu Jan 18 21:57:12.606061 2018] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.25 (Debian) PHP/7.2.0RC3 configured -- resuming normal operations
+[Thu Jan 18 21:57:12.606106 2018] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+[Thu Jan 18 22:08:14.069076 2018] [core:error] [pid 21] [client 172.19.0.1:48796] AH00037: Symbolic link not allowed or link target not accessible: /code/public/images, referer: http://www.development.com/admin/pages
+[Thu Jan 18 22:08:15.424949 2018] [core:error] [pid 21] [client 172.19.0.1:48796] AH00037: Symbolic link not allowed or link target not accessible: /code/public/images, referer: http://www.development.com/admin
+[Thu Jan 18 22:10:02.395552 2018] [core:error] [pid 28] [client 172.19.0.1:49696] AH00037: Symbolic link not allowed or link target not accessible: /code/public/images, referer: http://www.development.com/admin/pages
+[Thu Jan 18 22:10:09.879557 2018] [core:error] [pid 18] [client 172.19.0.1:49762] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images, referer: http://www.development.com/admin/pages
+[Thu Jan 18 22:10:30.745377 2018] [core:error] [pid 19] [client 172.19.0.1:49934] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:13:35.082807 2018] [core:error] [pid 20] [client 172.19.0.1:51562] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:13:35.558183 2018] [core:error] [pid 20] [client 172.19.0.1:51562] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:13:35.810465 2018] [core:error] [pid 20] [client 172.19.0.1:51562] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:13:35.998534 2018] [core:error] [pid 20] [client 172.19.0.1:51562] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:13:36.224063 2018] [core:error] [pid 20] [client 172.19.0.1:51562] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:13:39.734257 2018] [core:error] [pid 20] [client 172.19.0.1:51562] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:13:40.118025 2018] [core:error] [pid 20] [client 172.19.0.1:51562] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:13:40.330556 2018] [core:error] [pid 20] [client 172.19.0.1:51562] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:13:40.521043 2018] [core:error] [pid 20] [client 172.19.0.1:51562] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:13:40.722021 2018] [core:error] [pid 20] [client 172.19.0.1:51562] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:13:40.903439 2018] [core:error] [pid 20] [client 172.19.0.1:51562] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:13:41.105396 2018] [core:error] [pid 20] [client 172.19.0.1:51562] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:13:41.306330 2018] [core:error] [pid 20] [client 172.19.0.1:51562] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:13:41.486114 2018] [core:error] [pid 20] [client 172.19.0.1:51562] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:13:41.990476 2018] [core:error] [pid 20] [client 172.19.0.1:51562] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:13:42.060228 2018] [core:error] [pid 20] [client 172.19.0.1:51562] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:13:42.082344 2018] [core:error] [pid 20] [client 172.19.0.1:51562] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:13:42.116886 2018] [core:error] [pid 20] [client 172.19.0.1:51562] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:13:42.133101 2018] [core:error] [pid 20] [client 172.19.0.1:51562] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:13:42.146881 2018] [core:error] [pid 20] [client 172.19.0.1:51562] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:13:42.211337 2018] [core:error] [pid 20] [client 172.19.0.1:51562] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:13:42.287156 2018] [core:error] [pid 20] [client 172.19.0.1:51562] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:13:42.297378 2018] [core:error] [pid 20] [client 172.19.0.1:51562] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:13:42.341411 2018] [core:error] [pid 20] [client 172.19.0.1:51562] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:13:42.387757 2018] [core:error] [pid 20] [client 172.19.0.1:51562] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:13:42.405429 2018] [core:error] [pid 20] [client 172.19.0.1:51562] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:13:42.449378 2018] [core:error] [pid 20] [client 172.19.0.1:51562] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:13:42.461072 2018] [core:error] [pid 20] [client 172.19.0.1:51562] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:13:42.503361 2018] [core:error] [pid 20] [client 172.19.0.1:51562] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:13:42.547377 2018] [core:error] [pid 20] [client 172.19.0.1:51562] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:13:42.562406 2018] [core:error] [pid 20] [client 172.19.0.1:51562] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:13:42.613598 2018] [core:error] [pid 20] [client 172.19.0.1:51562] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:13:42.623732 2018] [core:error] [pid 20] [client 172.19.0.1:51562] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:13:42.665646 2018] [core:error] [pid 20] [client 172.19.0.1:51562] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:13:42.696658 2018] [core:error] [pid 20] [client 172.19.0.1:51562] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:13:42.736800 2018] [core:error] [pid 20] [client 172.19.0.1:51562] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:13:42.747244 2018] [core:error] [pid 20] [client 172.19.0.1:51562] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:13:42.782566 2018] [core:error] [pid 20] [client 172.19.0.1:51562] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:13:42.817282 2018] [core:error] [pid 20] [client 172.19.0.1:51562] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:13:42.858158 2018] [core:error] [pid 20] [client 172.19.0.1:51562] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:13:42.886392 2018] [core:error] [pid 20] [client 172.19.0.1:51562] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:13:42.933934 2018] [core:error] [pid 20] [client 172.19.0.1:51562] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:13:42.963041 2018] [core:error] [pid 20] [client 172.19.0.1:51562] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:13:42.999104 2018] [core:error] [pid 20] [client 172.19.0.1:51562] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:13:43.007500 2018] [core:error] [pid 20] [client 172.19.0.1:51562] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:13:43.047716 2018] [core:error] [pid 20] [client 172.19.0.1:51562] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:13:43.085695 2018] [core:error] [pid 20] [client 172.19.0.1:51562] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:13:43.114278 2018] [core:error] [pid 20] [client 172.19.0.1:51562] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:13:43.141221 2018] [core:error] [pid 20] [client 172.19.0.1:51562] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:13:43.173903 2018] [core:error] [pid 20] [client 172.19.0.1:51562] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:13:43.216347 2018] [core:error] [pid 20] [client 172.19.0.1:51562] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:13:43.255172 2018] [core:error] [pid 20] [client 172.19.0.1:51562] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:13:43.296751 2018] [core:error] [pid 20] [client 172.19.0.1:51562] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:13:43.333956 2018] [core:error] [pid 20] [client 172.19.0.1:51562] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:13:43.365543 2018] [core:error] [pid 20] [client 172.19.0.1:51562] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:13:43.389692 2018] [core:error] [pid 20] [client 172.19.0.1:51562] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:13:43.423737 2018] [core:error] [pid 20] [client 172.19.0.1:51562] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:13:43.461952 2018] [core:error] [pid 20] [client 172.19.0.1:51562] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:13:43.502173 2018] [core:error] [pid 20] [client 172.19.0.1:51562] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:13:43.513128 2018] [core:error] [pid 20] [client 172.19.0.1:51562] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:13:43.551259 2018] [core:error] [pid 20] [client 172.19.0.1:51562] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:13:43.620870 2018] [core:error] [pid 20] [client 172.19.0.1:51562] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:13:43.634222 2018] [core:error] [pid 20] [client 172.19.0.1:51562] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:13:43.669966 2018] [core:error] [pid 20] [client 172.19.0.1:51562] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:13:43.729124 2018] [core:error] [pid 20] [client 172.19.0.1:51562] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:13:43.749066 2018] [core:error] [pid 20] [client 172.19.0.1:51562] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:13:43.799651 2018] [core:error] [pid 20] [client 172.19.0.1:51562] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:15:39.590578 2018] [mpm_prefork:notice] [pid 1] AH00169: caught SIGTERM, shutting down
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.19.0.3. Set the 'ServerName' directive globally to suppress this message
+[Thu Jan 18 22:15:48.406570 2018] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.25 (Debian) PHP/7.2.0RC3 configured -- resuming normal operations
+[Thu Jan 18 22:15:48.406625 2018] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+[Thu Jan 18 22:15:50.468058 2018] [core:error] [pid 17] [client 172.19.0.1:52668] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:15:50.917619 2018] [core:error] [pid 17] [client 172.19.0.1:52668] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:15:51.237988 2018] [core:error] [pid 17] [client 172.19.0.1:52668] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:15:51.648749 2018] [core:error] [pid 17] [client 172.19.0.1:52668] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:15:52.100357 2018] [core:error] [pid 17] [client 172.19.0.1:52668] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:15:52.404596 2018] [core:error] [pid 17] [client 172.19.0.1:52668] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:15:52.697077 2018] [core:error] [pid 17] [client 172.19.0.1:52668] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:15:52.955601 2018] [core:error] [pid 17] [client 172.19.0.1:52668] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:15:53.167663 2018] [core:error] [pid 17] [client 172.19.0.1:52668] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:15:53.368000 2018] [core:error] [pid 17] [client 172.19.0.1:52668] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:15:53.582441 2018] [core:error] [pid 17] [client 172.19.0.1:52668] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:15:53.772676 2018] [core:error] [pid 17] [client 172.19.0.1:52668] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:15:53.980261 2018] [core:error] [pid 17] [client 172.19.0.1:52668] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:15:54.183231 2018] [core:error] [pid 17] [client 172.19.0.1:52668] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:15:56.209009 2018] [core:error] [pid 17] [client 172.19.0.1:52668] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:15:56.449489 2018] [core:error] [pid 17] [client 172.19.0.1:52668] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:15:56.683662 2018] [core:error] [pid 17] [client 172.19.0.1:52668] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:15:56.885304 2018] [core:error] [pid 17] [client 172.19.0.1:52668] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:15:57.085940 2018] [core:error] [pid 17] [client 172.19.0.1:52668] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:15:57.303496 2018] [core:error] [pid 17] [client 172.19.0.1:52668] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:15:57.505345 2018] [core:error] [pid 17] [client 172.19.0.1:52668] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:15:57.698881 2018] [core:error] [pid 17] [client 172.19.0.1:52668] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:15:57.902916 2018] [core:error] [pid 17] [client 172.19.0.1:52668] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:15:58.082898 2018] [core:error] [pid 17] [client 172.19.0.1:52668] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:15:58.301017 2018] [core:error] [pid 17] [client 172.19.0.1:52668] AH00037: Symbolic link not allowed or link target not accessible: /code/public/admin/images
+[Thu Jan 18 22:16:03.551250 2018] [core:error] [pid 18] [client 172.19.0.1:52782] AH00037: Symbolic link not allowed or link target not accessible: /code/public/images
+[Thu Jan 18 22:17:43.636375 2018] [core:error] [pid 20] [client 172.19.0.1:53602] AH00037: Symbolic link not allowed or link target not accessible: /code/public/images
+[Thu Jan 18 22:18:43.816817 2018] [autoindex:error] [pid 17] [client 172.19.0.1:54104] AH01276: Cannot serve directory /code/public/admin/: No matching DirectoryIndex (index.php,index.html) found, and server-generated directory index forbidden by Options directive, referer: http://www.development.com/admin/login
+[Thu Jan 18 22:19:17.588589 2018] [core:error] [pid 18] [client 172.19.0.1:54382] AH00037: Symbolic link not allowed or link target not accessible: /code/public/images, referer: http://www.development.com/admin
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.19.0.3. Set the 'ServerName' directive globally to suppress this message
+[Thu Jan 18 22:21:54.346743 2018] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.25 (Debian) PHP/7.2.0RC3 configured -- resuming normal operations
+[Thu Jan 18 22:21:54.347033 2018] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+[Thu Jan 18 22:22:24.197915 2018] [core:error] [pid 17] [client 172.19.0.1:34290] AH00037: Symbolic link not allowed or link target not accessible: /code/public/images, referer: http://www.development.com/
+[Thu Jan 18 22:22:24.230553 2018] [core:error] [pid 17] [client 172.19.0.1:34290] AH00037: Symbolic link not allowed or link target not accessible: /code/public/images, referer: http://www.development.com/css/app.css
+[Thu Jan 18 22:22:29.504631 2018] [core:error] [pid 18] [client 172.19.0.1:34302] AH00037: Symbolic link not allowed or link target not accessible: /code/public/images, referer: http://www.development.com/admin
+[Thu Jan 18 22:22:34.701430 2018] [core:error] [pid 20] [client 172.19.0.1:34314] AH00037: Symbolic link not allowed or link target not accessible: /code/public/images, referer: http://www.development.com/admin/pages
+[Thu Jan 18 22:22:47.127850 2018] [core:error] [pid 17] [client 172.19.0.1:34362] AH00037: Symbolic link not allowed or link target not accessible: /code/public/images, referer: http://www.development.com/admin/pages
+[Thu Jan 18 22:26:52.588349 2018] [core:error] [pid 25] [client 172.19.0.1:36364] AH00037: Symbolic link not allowed or link target not accessible: /code/public/images, referer: http://www.development.com/admin/pages
+[Thu Jan 18 22:27:43.847289 2018] [core:error] [pid 19] [client 172.19.0.1:36794] AH00037: Symbolic link not allowed or link target not accessible: /code/public/images, referer: http://www.development.com/admin/pages
+[Thu Jan 18 22:29:46.040096 2018] [core:error] [pid 17] [client 172.19.0.1:37800] AH00037: Symbolic link not allowed or link target not accessible: /code/public/images, referer: http://www.development.com/admin/pages
+[Thu Jan 18 22:38:59.297455 2018] [core:error] [pid 25] [client 172.19.0.1:38614] AH00037: Symbolic link not allowed or link target not accessible: /code/public/images, referer: http://www.development.com/admin/pages
+[Thu Jan 18 22:41:17.543119 2018] [core:error] [pid 22] [client 172.19.0.1:39760] AH00037: Symbolic link not allowed or link target not accessible: /code/public/images, referer: http://www.development.com/admin/pages
+[Thu Jan 18 22:41:44.983118 2018] [core:error] [pid 21] [client 172.19.0.1:40018] AH00037: Symbolic link not allowed or link target not accessible: /code/public/images, referer: http://www.development.com/admin/pages
+[Thu Jan 18 22:44:16.302642 2018] [core:error] [pid 22] [client 172.19.0.1:41234] AH00037: Symbolic link not allowed or link target not accessible: /code/public/images, referer: http://www.development.com/admin/pages
+[Thu Jan 18 22:52:30.392858 2018] [core:error] [pid 21] [client 172.19.0.1:45298] AH00037: Symbolic link not allowed or link target not accessible: /code/public/images, referer: http://www.development.com/admin/pages
+[Thu Jan 18 22:56:19.801578 2018] [core:error] [pid 25] [client 172.19.0.1:47180] AH00037: Symbolic link not allowed or link target not accessible: /code/public/images, referer: http://www.development.com/admin/pages
+[Thu Jan 18 22:58:11.071560 2018] [core:error] [pid 19] [client 172.19.0.1:48084] AH00037: Symbolic link not allowed or link target not accessible: /code/public/images, referer: http://www.development.com/admin/pages
+[Thu Jan 18 23:03:26.726256 2018] [core:error] [pid 24] [client 172.19.0.1:50682] AH00037: Symbolic link not allowed or link target not accessible: /code/public/images, referer: http://www.development.com/admin/pages
+[Thu Jan 18 23:10:16.979660 2018] [core:error] [pid 23] [client 172.19.0.1:54062] AH00037: Symbolic link not allowed or link target not accessible: /code/public/images, referer: http://www.development.com/admin/pages
+[Thu Jan 18 23:13:01.507939 2018] [core:error] [pid 19] [client 172.19.0.1:55394] AH00037: Symbolic link not allowed or link target not accessible: /code/public/images, referer: http://www.development.com/admin/pages
+[Thu Jan 18 23:23:32.681745 2018] [core:error] [pid 24] [client 172.19.0.1:60532] AH00037: Symbolic link not allowed or link target not accessible: /code/public/images, referer: http://www.development.com/admin/pages
+[Thu Jan 18 23:29:53.568535 2018] [core:error] [pid 17] [client 172.19.0.1:35434] AH00037: Symbolic link not allowed or link target not accessible: /code/public/images, referer: http://www.development.com/admin/pages
+[Fri Jan 19 00:19:41.549900 2018] [core:error] [pid 22] [client 172.19.0.1:59674] AH00037: Symbolic link not allowed or link target not accessible: /code/public/images, referer: http://www.development.com/admin/pages
