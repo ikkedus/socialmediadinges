@@ -29,6 +29,7 @@ Route::get('/admin/login',"UserController@login");
 Route::post('/admin/validate',"UserController@validateUser");
 
 Route::get('/admin/pages',"PageController@index");
+Route::post('/page/save',"PageController@save");
 
 Route::post('/image/upload',"ImageController@upload");
 Route::post('/image/clear',"ImageController@clear");

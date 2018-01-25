@@ -298,7 +298,7 @@ window.addEventListener('load', function() {
             };
             xhr = new XMLHttpRequest();
             xhr.addEventListener('readystatechange', onStateChange);
-            xhr.open('POST', '/x/save-page');
+            xhr.open('POST', '/page/save');
             xhr.send(payload);
         });
     }

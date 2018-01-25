@@ -11,15 +11,13 @@ namespace App\Models;
 
 class ContentBlock extends Entity
 {
-    protected $tableName="content_block";
+    protected $tableName="contentblocks";
 
     protected $name;
 
     protected $content;
 
-    protected $type;
-
-    protected $is_slide;
+    protected $pageid;
 
     /**
      * @return mixed
@@ -57,32 +55,18 @@ class ContentBlock extends Entity
     /**
      * @return mixed
      */
-    public function getType()
+    public function getPageid()
     {
-        return $this->type;
+        return $this->pageid;
     }
 
     /**
-     * @param mixed $type
+     * @param mixed $pageid
      */
-    public function setType(ContentBlockType $type)
+    public function setPageid($pageid): void
     {
-        $this->type = $type;
+        $this->pageid = $pageid;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getisSlide()
-    {
-        return $this->is_slide;
-    }
 
-    /**
-     * @param mixed $is_slide
-     */
-    public function setIsSlide($is_slide)
-    {
-        $this->is_slide = $is_slide;
-    }
 }
